@@ -19,19 +19,43 @@ To integrate a skill from this workspace into an agent environment:
    ```
 
 2. **Register the Skill:**
-   Depending on the agent framework, register the skill by pointing it to the directory containing the `SKILL.md` file. For Gemini CLI:
+   Run the automated registration script to link all skills:
    ```bash
-   # Example: Linking a system skill
-   mkdir -p ~/.gemini/skills/antigravity-support
-   ln -s ~/skills-workspace/system-skills/antigravity-support/SKILL.md ~/.gemini/skills/antigravity-support/SKILL.md
+   python3 -c "
+   import os
+   from pathlib import Path
+   workspace = Path.home() / 'skills-workspace' / 'user-skills' / 'hermes'
+   skills_dir = Path.home() / '.gemini' / 'skills'
+   for skill_md in workspace.rglob('SKILL.md'):
+       skill_name = skill_md.parent.name
+       target_dir = skills_dir / skill_name
+       target_dir.mkdir(parents=True, exist_ok=True)
+       symlink_path = target_dir / 'SKILL.md'
+       if symlink_path.exists(): os.remove(symlink_path)
+       os.symlink(skill_md, symlink_path)
+   "
    ```
 
 3. **Verify:**
-   Verify the agent recognizes the skill by listing available skills in the agent's interactive interface (e.g., using `ls ~/.gemini/skills/`).
+   Verify the agent recognizes the skill by listing available skills (e.g., `ls ~/.gemini/skills/`).
+
+## Tactics & Compatibility
+
+To ensure full functionality, particularly for ported skills (like Hermes Agent skills):
+
+- **Environment Setup:** Ensure `HERMES_HOME` is configured to point to your Gemini CLI home:
+  ```bash
+  export HERMES_HOME=$HOME/.gemini
+  # Add to .bashrc or .zshrc
+  ```
+- **Dependencies:** Install required system tools (e.g., `pkg install gh` for GitHub PR integration).
+- **Automation:**
+  - **Auto-Organization:** `~/skills-workspace/organize_skills.py` handles folder placement.
+  - **Git Automation:** The `pre-commit` hook triggers organization before committing, and the `post-commit` hook pushes changes automatically to GitHub.
 
 ## Workflow
 
-1. **Creation/Update:** Place or edit skill files (e.g., `SKILL.md` and associated scripts) in `~/skills-workspace/system-skills/` or `~/skills-workspace/user-skills/`.
+1. **Creation/Update:** Place or edit skill files (e.g., `SKILL.md`) in `~/skills-workspace/system-skills/` or `~/skills-workspace/user-skills/`.
 2. **Version Control:**
    ```bash
    cd ~/skills-workspace
