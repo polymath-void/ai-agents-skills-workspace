@@ -13,11 +13,11 @@ This skill provides step-by-step instructions and configuration protocols for se
 ## 📋 Prerequisites
 
 1. **Same Wi-Fi Network**: Both the host machine and your phone must be connected to the same local Wi-Fi network.
-2. **Find Host IP**: Find the host's local IP address on the Wi-Fi interface (e.g. `wlxa047d780dded`):
+2. **Find Host IP**: Find the host's local IP address on the Wi-Fi interface (e.g. `wlxa047d780dded` or similar):
    ```bash
    ip a | grep -E "inet .*wl"
    ```
-   *(Your local IP is `192.168.0.107`)*
+   *(Note down the IP, e.g. `192.168.1.100`)*
 
 ---
 
@@ -58,12 +58,12 @@ This skill provides step-by-step instructions and configuration protocols for se
    *(Press enter to accept defaults)*
 4. **Copy Public Key to Host**:
    ```bash
-   ssh-copy-id polymath-void@192.168.0.107
+   ssh-copy-id username@<HOST_IP_ADDRESS>
    ```
    *(Enter your host password once)*
 5. **Connect Securely**:
    ```bash
-   ssh polymath-void@192.168.0.107
+   ssh username@<HOST_IP_ADDRESS>
    ```
 
 ---
@@ -73,9 +73,9 @@ This skill provides step-by-step instructions and configuration protocols for se
 1. Install **JuiceSSH** or **Termius** from the Google Play Store.
 2. Create a new Connection:
    - **Type**: SSH
-   - **Address / Host**: `192.168.0.107`
+   - **Address / Host**: `<HOST_IP_ADDRESS>`
    - **Port**: `22`
-   - **Username**: `polymath-void`
+   - **Username**: `<YOUR_HOST_USERNAME>`
 3. Save and tap to connect. Enter your password when prompted.
 
 ---
@@ -84,8 +84,8 @@ This skill provides step-by-step instructions and configuration protocols for se
 
 1. Install **Termius** or **Blink Shell** from the App Store.
 2. Add a new Host:
-   - **IP / Host**: `192.168.0.107`
-   - **Username**: `polymath-void`
+   - **IP / Host**: `<HOST_IP_ADDRESS>`
+   - **Username**: `<YOUR_HOST_USERNAME>`
    - **Password**: *(Enter your host login password)*
 3. Save and connect.
 
@@ -105,4 +105,4 @@ Ensure that your remote session binds to the active desktop session keyring:
 export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 export DISPLAY=":0"
 ```
-*(This is appended automatically to `~/.bashrc` to ensure clean passwordless key access).*
+*(This can be appended to your `~/.bashrc` to ensure clean passwordless key access).*
