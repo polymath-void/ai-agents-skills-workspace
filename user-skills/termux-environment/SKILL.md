@@ -1,17 +1,29 @@
 ---
 name: termux-environment
-description: Guidelines, path resolution, package management, and non-interactive Git authentication setup for Android Termux environments.
+description: Priority guidelines, path resolution, package management, non-interactive Git authentication setup, and full-environment cloud backup rules for Android Termux environments.
 ---
 
 # 🤖 Termux Environment & Git Authentication Skill
 
-This skill provides comprehensive instructions for operating within an Android Termux environment, managing paths, handling package installations, and executing non-interactive Git credentials setup.
+This skill provides comprehensive instructions for operating within an Android Termux environment, managing paths, handling package installations, executing non-interactive Git credentials setup, and running full-environment cloud backups.
 
 ---
 
-## 🔑 1. Non-Interactive Git Credential Management
+## 💾 1. Mandatory Full Environment Backup Rule
 
-When performing `git push` or `git fetch` operations in Termux non-interactive shells (such as AI background jobs or automated sub-processes):
+**Rule Directive**: Whenever the user asks to run a backup ("run backup", "backup", "create backup"), ALWAYS perform a **whole-environment backup** covering all user data in `/data/data/com.termux/files/home`.
+
+### Backup Execution Command:
+```bash
+python3 /data/data/com.termux/files/home/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup
+```
+* **Scope**: Backs up `~/.gemini`, `~/.config`, all project repositories, agent skills, custom scripts, and system package lists (`~/.termux/`).
+
+---
+
+## 🔑 2. Non-Interactive Git Credential Management
+
+When performing `git push` or `git fetch` operations in Termux non-interactive shells:
 
 1. **Disable Terminal Prompts**:
    ```bash
@@ -28,7 +40,7 @@ When performing `git push` or `git fetch` operations in Termux non-interactive s
 
 ---
 
-## 📂 2. Termux Path Resolution & Guidelines
+## 📂 3. Termux Path Resolution & Guidelines
 
 - **Package Manager & Binaries**: `/data/data/com.termux/files/usr/bin/`
 - **User Home Directory**: `/data/data/com.termux/files/home/`
@@ -37,7 +49,7 @@ When performing `git push` or `git fetch` operations in Termux non-interactive s
 
 ---
 
-## 🌿 3. Project Branching & Operating Rules
+## 🌿 4. Project Branching & Operating Rules
 
 - **`piuu`** (`main` Branch): Production-stable baseline launcher.
 - **`zen-piuu`** (`master` Branch): Extension architecture & core planned master branch.
