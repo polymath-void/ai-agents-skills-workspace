@@ -20,6 +20,8 @@
    * Floating side-edge bar assist, vertical edge dragging, top drop removal header zone (`🗑️ Drop to remove`), persistent Notes repository, and quick app switcher.
 6. **`piuu-electron-desktop-studio`**:
    * Electron cross-platform creator studio (`piuu-studio-desktop`), `.piuu` RSA zip bundle archive compiler, `contextBridge` IPC preload bridge, and 60fps canvas phone simulator.
+7. **`ai-agent-skill-crafting`**:
+   * Core AI agent meta-skill for adapting, sourcing, creating, structuring, and refining modular knowledge skills from codebase core to system distribution.
 
 ---
 
