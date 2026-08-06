@@ -11,11 +11,11 @@ This skill provides comprehensive instructions for operating within an Android T
 
 ## 💾 1. Mandatory Full Environment Backup Rule
 
-**Rule Directive**: Whenever the user asks to run a backup ("run backup", "backup", "create backup"), ALWAYS perform a **whole-environment backup** covering all user data in `/data/data/com.termux/files/home`.
+**Rule Directive**: Whenever the user asks to run a backup ("run backup", "backup", "create backup"), ALWAYS perform a **whole-environment backup** covering all user data in `$HOME`.
 
 ### Backup Execution Command:
 ```bash
-python3 /data/data/com.termux/files/home/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup
+python3 $HOME/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup
 ```
 * **Scope**: Backs up `~/.gemini`, `~/.config`, all project repositories, agent skills, custom scripts, and system package lists (`~/.termux/`).
 
@@ -42,9 +42,9 @@ When performing `git push` or `git fetch` operations in Termux non-interactive s
 
 ## 📂 3. Termux Path Resolution & Guidelines
 
-- **Package Manager & Binaries**: `/data/data/com.termux/files/usr/bin/`
-- **User Home Directory**: `/data/data/com.termux/files/home/`
-- **Shell Interpreters**: Use `#!/bin/sh` or `/data/data/com.termux/files/usr/bin/bash`. (Avoid `/usr/bin/env bash` on Termux unless `termux-fix-shebang` has been run).
+- **Package Manager & Binaries**: `$PREFIX/bin/` (`/data/data/com.termux/files/usr/bin/`)
+- **User Home Directory**: `$HOME` (`/data/data/com.termux/files/home/`)
+- **Shell Interpreters**: Use `#!/bin/sh` or `$PREFIX/bin/bash`. (Avoid `/usr/bin/env bash` on Termux unless `termux-fix-shebang` has been run).
 - **Shebang Repair Tool**: Run `termux-fix-shebang <script_path>` when executing scripts created on Linux/macOS.
 
 ---

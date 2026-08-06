@@ -11,9 +11,9 @@ This skill documents building cross-platform Electron desktop creator tools (`pi
 
 ## 🏗️ 1. Architecture Overview (`piuu-studio-desktop/`)
 
-* **Main Process ([`main.js`](file:///data/data/com.termux/files/home/repo/Piuu-Unified-Launcher-Android/piuu-studio-desktop/main.js))**: Node.js background process performing asynchronous zip archiving and SHA-256 integrity hashing.
-* **Preload Bridge ([`preload.js`](file:///data/data/com.termux/files/home/repo/Piuu-Unified-Launcher-Android/piuu-studio-desktop/src/preload.js))**: Secure `contextBridge.exposeInMainWorld('piuuStudio', ...)` API exposing file system dialogs and export methods to Chromium.
-* **Phone Canvas Simulator ([`index.html`](file:///data/data/com.termux/files/home/repo/Piuu-Unified-Launcher-Android/piuu-studio-desktop/src/index.html))**: Real-time HTML5 60fps simulated phone canvas preview with dynamic theme sliders.
+* **Main Process (`piuu-studio-desktop/main.js`)**: Node.js background process performing asynchronous zip archiving and SHA-256 integrity hashing.
+* **Preload Bridge (`piuu-studio-desktop/src/preload.js`)**: Secure `contextBridge.exposeInMainWorld('piuuStudio', ...)` API exposing file system dialogs and export methods to Chromium.
+* **Phone Canvas Simulator (`piuu-studio-desktop/src/index.html`)**: Real-time HTML5 60fps simulated phone canvas preview with dynamic theme sliders.
 
 ---
 

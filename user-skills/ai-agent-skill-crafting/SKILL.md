@@ -76,15 +76,25 @@ To publish or update a skill across system environments:
 
 ```bash
 # 1. Write skill specification in workspace repository
-# File: /data/data/com.termux/files/home/skills-workspace/user-skills/<skill-name>/SKILL.md
+# File: $HOME/skills-workspace/user-skills/<skill-name>/SKILL.md
 
 # 2. Sync to local active agent CLI skill directories
 mkdir -p ~/.gemini/antigravity-cli/skills/<skill-name> ~/.gemini/antigravity-cli/builtin/skills/<skill-name>
-cp -r /data/data/com.termux/files/home/skills-workspace/user-skills/<skill-name>/* ~/.gemini/antigravity-cli/skills/<skill-name>/
-cp -r /data/data/com.termux/files/home/skills-workspace/user-skills/<skill-name>/* ~/.gemini/antigravity-cli/builtin/skills/<skill-name>/
+cp -r $HOME/skills-workspace/user-skills/<skill-name>/* ~/.gemini/antigravity-cli/skills/<skill-name>/
+cp -r $HOME/skills-workspace/user-skills/<skill-name>/* ~/.gemini/antigravity-cli/builtin/skills/<skill-name>/
 
 # 3. Commit and push to remote skills repository
 git add user-skills/<skill-name>/SKILL.md
 git commit -m "feat(skills): add <skill-name> core skill"
 git push origin main
 ```
+
+---
+
+## 🔒 6. Global Privacy & Data Isolation Rule
+
+When creating or refining skills, agents MUST adhere to strict data privacy standards:
+
+1. **Zero Personal Data Exposure**: NEVER hardcode personal user tokens, private account credentials, machine-specific account switches (`gh auth switch --user ...`), or private SSH keys inside `SKILL.md` specifications.
+2. **Portable Environment Referencing**: Use dynamic environment variables (`$HOME`, `~`, `$PREFIX`) instead of hardcoded environment paths.
+3. **User-Centric Data Awareness**: Direct the agent to interact with the user's data dynamically rather than embedding static personal identifiers.

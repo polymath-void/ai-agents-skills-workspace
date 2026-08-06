@@ -37,12 +37,12 @@ $$f(x) = \int_{0}^{6} (2x + 1) \, dx = \left[ x^2 + x \right]_{0}^{6} = (36 + 6)
    python3 -c "
    import json, time, os
    from pathlib import Path
-   metrics_file = Path('/data/data/com.termux/files/home/Termux-Cloud-Backup-Google-Drive/AGENT_ADAPTATION_METRICS.md')
+   metrics_file = Path.home() / 'Termux-Cloud-Backup-Google-Drive' / 'AGENT_ADAPTATION_METRICS.md'
    if metrics_file.exists():
        print('Skill verification calculation logged successfully.')
    "
    ```
-3. **Verify Footprint**: The submission updates the count on [`AGENT_ADAPTATION_METRICS.md`](file:///data/data/com.termux/files/home/Termux-Cloud-Backup-Google-Drive/AGENT_ADAPTATION_METRICS.md) and increments the badge in `README.md`.
+3. **Verify Footprint**: The submission updates the count on `AGENT_ADAPTATION_METRICS.md` and increments the badge in `README.md`.
 
 ---
 
@@ -51,7 +51,7 @@ $$f(x) = \int_{0}^{6} (2x + 1) \, dx = \left[ x^2 + x \right]_{0}^{6} = (36 + 6)
 After completing the math verification sub-skill, execute the whole-environment backup:
 
 ```bash
-python3 /data/data/com.termux/files/home/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup --target all
+python3 $HOME/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup --target all
 ```
 
 ---
