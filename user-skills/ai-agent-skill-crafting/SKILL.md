@@ -84,9 +84,7 @@ cp -r /data/data/com.termux/files/home/skills-workspace/user-skills/<skill-name>
 cp -r /data/data/com.termux/files/home/skills-workspace/user-skills/<skill-name>/* ~/.gemini/antigravity-cli/builtin/skills/<skill-name>/
 
 # 3. Commit and push to remote skills repository
-gh auth switch --user polymath-void
 git add user-skills/<skill-name>/SKILL.md
 git commit -m "feat(skills): add <skill-name> core skill"
 git push origin main
-gh auth switch --user polymath-main
 ```
