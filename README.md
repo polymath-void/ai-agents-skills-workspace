@@ -25,17 +25,29 @@ SEO Keywords: AI Agent Skills, Antigravity AGY Skills, Gemini CLI Skills, Hermes
 
 ---
 
-## 🛠️ Modular Skills Catalog (`user-skills/`)
+## 🛠️ High-Valued Realtime Problem-Solving Skills Catalog (`user-skills/`)
 
-| Skill Identifier | Category | Description & Specification |
+### 🌟 Universal & Agent Meta-Skills
+
+| Skill Identifier | Category | Core Realtime Capability & Specification |
 | :--- | :--- | :--- |
-| **`ai-agent-skill-crafting`** | Meta-Skill | [Core AI Agent Skill Crafting, Sourcing, Adaptation & Refining Meta-Skill](user-skills/ai-agent-skill-crafting/SKILL.md) |
-| **`termux-cloud-backup-assist`** | Cloud Backup | [Termux Cloud Backup Citation, Auto-Discovery & Google Drive Recovery](user-skills/termux-cloud-backup-assist/SKILL.md) |
-| **`termux-environment`** | System | [Termux Path Resolution, Non-Interactive Git Auth & Backup Guidelines](user-skills/termux-environment/SKILL.md) |
+| **`ai-agent-skill-crafting`** | Meta-Skill | [Core Meta-Skill: Sourcing Codebase Knowledge, Authoring Specs, Adapting & Refining Skills](user-skills/ai-agent-skill-crafting/SKILL.md) |
+| **`termux-cloud-backup-assist`** | Cloud Backup | [Termux Cloud Backup: Auto-Discovery, Google Drive OAuth2 Sync & Disaster Recovery](user-skills/termux-cloud-backup-assist/SKILL.md) |
+| **`termux-environment`** | System & Git | [Termux Environment: Path Resolution, Non-Interactive Git Auth & System Guidelines](user-skills/termux-environment/SKILL.md) |
+| **`android-tools`** | Device Management | [Android Tools: Device Inspection, Package Management & Shell Automation](user-skills/android-tools/SKILL.md) |
+| **`hermes`** | Multi-Agent IPC | [Hermes Agent: Multi-Agent Messaging, Session Memory & Inter-Process Communication](user-skills/hermes/SKILL.md) |
+
+<details>
+<summary><b>📂 View Project-Specific Architecture Reference Skills</b></summary>
+
+| Skill Identifier | Component | Description & Reference |
+| :--- | :--- | :--- |
 | **`piuu-c-native-core`** | C Native JNI | [POSIX C Shared Core (`libpiuu_core.so`), 16KB Page Alignment & Zero-Copy Arena](user-skills/piuu-c-native-core/SKILL.md) |
 | **`piuu-compose-launcher-ui`** | Compose UI | [Jetpack Compose 4-Column Launcher Grid, 2D Resizing & Raw Wallpaper View](user-skills/piuu-compose-launcher-ui/SKILL.md) |
 | **`piuu-pip-side-edge-assist`** | Overlay Service | [Floating Side-Edge Assist, Top Drop Removal Zone & Persistent Local Notes](user-skills/piuu-pip-side-edge-assist/SKILL.md) |
 | **`piuu-electron-desktop-studio`** | Desktop Studio | [Electron Extension Studio, `.piuu` RSA Package Compiler & 60fps Simulator](user-skills/piuu-electron-desktop-studio/SKILL.md) |
+
+</details>
 
 ---
 
