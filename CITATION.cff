@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you utilize the AI Agents Skills Workspace in your agentic workflows, multi-agent swarms, or technical publications, please cite it as below."
+authors:
+  - family-names: "Void"
+    given-names: "Polymath"
+    affiliation: "Antigravity Agentic Systems"
+title: "AI Agents Skills Workspace: Autonomous Agent Operating Specification, Skill Auto-Discovery Engine, and Universal Adaptation Ledger"
+version: "2.2.0"
+date-released: 2026-08-07
+url: "https://github.com/polymath-void/gemini-skills-workspace"
+repository-code: "https://github.com/polymath-void/gemini-skills-workspace"
+license: "MIT"
+type: "software"
+abstract: >-
+  The AI Agents Skills Workspace is a centralized, version-controlled repository of
+  modular, zero-authentication procedural skill packages, codebase inspection protocols,
+  and tool integrations designed for Antigravity AGY, Gemini CLI, Hermes, and autonomous
+  AI agent architectures.
+keywords:
+  - "ai-agent-skills"
+  - "autonomous-agents"
+  - "procedural-knowledge"
+  - "zero-auth"
+  - "antigravity-agy"
+  - "gemini-cli"
+  - "hermes-agent"
+  - "termux-environment"
+  - "multi-agent-swarms"
