@@ -27,3 +27,15 @@ my_custom_theme.piuu
 ├── theme.json
 └── icons/
 ```
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When working on `.piuu` extension packaging, Electron desktop studios, or IPC bridges, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-bundle-packer`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-bundle-packer) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-bundle-packer.md)): Compiles and validates verified `.piuu` extension packages with auto-generated SHA-256 manifests.
+- [`wc-json-validate`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-json-validate) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-json-validate.md)): Validates `plugin.json` and `theme.json` schemas.
+- [`wc-contract-check`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-contract-check) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-contract-check.md)): Audits IPC bridge contracts and API payloads between preload and renderer.
+- [`wc-deps`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-deps) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-deps.md)): Audits `package.json` dependencies for security vulnerabilities and version locks.
+- *Upcoming Tool Note*: `wc-electron-runner` (Headless Electron IPC mock verifier) is in the roadmap.
+

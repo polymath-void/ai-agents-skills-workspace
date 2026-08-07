@@ -98,3 +98,15 @@ When creating or refining skills, agents MUST adhere to strict data privacy stan
 1. **Zero Personal Data Exposure**: NEVER hardcode personal user tokens, private account credentials, machine-specific account switches (`gh auth switch --user ...`), or private SSH keys inside `SKILL.md` specifications.
 2. **Portable Environment Referencing**: Use dynamic environment variables (`$HOME`, `~`, `$PREFIX`) instead of hardcoded environment paths.
 3. **User-Centric Data Awareness**: Direct the agent to interact with the user's data dynamically rather than embedding static personal identifiers.
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When authoring, formatting, or discovering skills, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-json-prompt`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-json-prompt) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-json-prompt.md)): Extracts and repairs unformatted JSON payloads embedded inside natural language prompts.
+- [`wc-json-schema`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-json-schema) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-json-schema.md)): Generates standard JSON schemas for structured skill inputs/outputs.
+- [`wc-tool-registry`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-tool-registry) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-tool-registry.md)): Queries and indexes tools across all workspace categories.
+- [`wc-search`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-search) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-search.md)): Performs noise-free symbol and keyword discovery across repositories.
+- *Upcoming Tool Note*: `wc-skill-pack` (Automated `SKILL.md` YAML frontmatter linter and skill bundler) is scheduled for implementation.
+

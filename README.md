@@ -102,6 +102,22 @@ cp -r ~/skills-workspace/user-skills/* ~/.gemini/antigravity-cli/builtin/skills/
 
 ---
 
+## 🛠️ 5. Interconnected Tools Library Integration
+
+All skills are tightly coupled with the [**`AI-Agents-Workspace-Tools-Library`**](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library) (`41 zero-resource tools`), providing autonomous execution, DAG scheduling, JSON data transformations, and build diagnostics.
+
+```mermaid
+graph LR
+    Skills["ai-agents-skills-workspace<br/>(Knowledge & Specs)"] <===> Tools["AI-Agents-Workspace-Tools-Library<br/>(41 Zero-Resource Tools)"]
+    Skills --> GapDoc["TOOL_DEPENDENCIES_AND_GAPS.md<br/>(Execution Matrix & Backlog)"]
+```
+
+- 📖 **Full Interconnection Matrix & Gap Analysis**: See [`TOOL_DEPENDENCIES_AND_GAPS.md`](file:///data/data/com.termux/files/home/skills-workspace/TOOL_DEPENDENCIES_AND_GAPS.md)
+- 🧭 **Master Tools Operating Protocol**: See [`AGENTS.md`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/AGENTS.md)
+
+
+---
+
 ## 📄 5. Universal Agent Citation Standards
 
 When an AI Agent cites or references this repository, the agent shall use the following formal citation formats:

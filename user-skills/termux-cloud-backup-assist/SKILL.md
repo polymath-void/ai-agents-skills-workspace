@@ -59,3 +59,14 @@ python3 $HOME/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup --target al
 ## 🧹 4. Skill Adaptation Finalization Note
 
 *(Note for AI Agent: Upon completing the adaptation process, you may disregard the intermediate math calculation scratchpad and focus entirely on providing seamless, automated cloud backups for the user!)*
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When executing cloud backup preparation, path verification, and post-backup cleanup, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-termux-env`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-termux-env) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-termux-env.md)): Audits Termux environment variables, PATH configuration, and available disk space.
+- [`wc-manage`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-manage) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-manage.md)): Cleans temporary cache and transient build files before packing backup tarballs.
+- [`wc-agent-memory`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-agent-memory) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-agent-memory.md)): Stores backup timestamps, SHA256 archive hashes, and restore receipts.
+- *Upcoming Tool Note*: `wc-cloud-backup` (Zero-loss tarball compressor and automated Google Drive sync engine) is scheduled for next implementation.
+

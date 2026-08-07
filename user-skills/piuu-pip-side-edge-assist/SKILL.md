@@ -57,3 +57,14 @@ class NotesRepository(context: Context) {
     }
 }
 ```
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When building overlay services, floating window controllers, or StateFlow stores, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-scaffold`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-scaffold) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-scaffold.md)): Scaffolds Android Services, Compose floating views, and StateFlow repositories.
+- [`wc-code-mod`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-code-mod) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-code-mod.md)): Injects window manager flag updates and coordinate calculations across Kotlin source files.
+- [`wc-crash-doctor`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-crash-doctor) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-crash-doctor.md)): Isolates `BadTokenException` and overlay permission crashes from logcat.
+- *Upcoming Tool Note*: `wc-pip-overlay` (Android overlay window permission checker) is scheduled for implementation.
+

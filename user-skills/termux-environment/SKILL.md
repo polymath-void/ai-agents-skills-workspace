@@ -54,3 +54,14 @@ When performing `git push` or `git fetch` operations in Termux non-interactive s
 - **`piuu`** (`main` Branch): Production-stable baseline launcher.
 - **`zen-piuu`** (`master` Branch): Extension architecture & core planned master branch.
 - **No Auto-Push Rule**: Keep code edits local until explicit push instruction from user. Workflow builds are manual-dispatch (`workflow_dispatch`) only.
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When executing commands, managing Git, or repairing Termux scripts, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-termux-env`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-termux-env) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-termux-env.md)): Audits Termux hardware telemetry, RAM, and automatically fixes shebang paths across scripts.
+- [`wc-error-healer`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-error-healer) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-error-healer.md)): Automatically diagnoses and fixes Git 403 authorization errors and non-interactive token issues.
+- [`wc-git-sync`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-git-sync) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-git-sync.md)): Synchronizes multi-branch repositories into a unified path (`main` and `master`).
+- [`wc-agent-probe`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-agent-probe) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-agent-probe.md)): Audits toolchains (clang, python, gh) and environment limits.
+

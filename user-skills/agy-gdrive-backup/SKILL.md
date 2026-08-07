@@ -48,3 +48,14 @@ This skill defines standard operating procedures and workflows for managing, bac
 | `agy-backup restore --local-file <path>` | Restore target user data directly from a local archive file |
 | `agy-backup rollback` | Emergency rollback to pre-restore local safety snapshot |
 | `agy-backup status` | Show target paths, credentials, and local snapshot state |
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When managing incremental snapshots, manifest generation, and backup cleanup, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-agent-memory`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-agent-memory) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-agent-memory.md)): Stores pre-restore directory snapshots and rollbacks in SQLite.
+- [`wc-context-pack`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-context-pack) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-context-pack.md)): Compresses backup execution logs and excludes cache files from context.
+- [`wc-manage`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-manage) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-manage.md)): Cleans stale backup archives from local cache folders.
+- *Upcoming Tool Note*: `wc-cloud-backup` (Integrated zero-loss tarball backup and cloud sync engine) is scheduled for implementation.
+

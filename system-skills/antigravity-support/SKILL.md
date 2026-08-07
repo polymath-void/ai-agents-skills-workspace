@@ -56,3 +56,14 @@ If you are transitioning or migrating from another tool (such as Gemini CLI) to 
 
 If you need more details or have advanced configuration/migration needs, please visit the official documentation:
 - **Official Documentation:** https://antigravity.google/docs/cli-getting-started
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When supporting Antigravity AGY operations, subagent task dispatching, and workspace diagnosis, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-tool-registry`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-tool-registry) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-tool-registry.md)): Queries and discovers matching AGY workspace tools dynamically.
+- [`wc-agent-probe`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-agent-probe) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-agent-probe.md)): Diagnoses AGY terminal environments, shell interpreters, and memory headroom.
+- [`wc-context-pack`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-context-pack) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-context-pack.md)): Compresses AGY logs and conversation history transcripts before prompt injection.
+- *Upcoming Tool Note*: `wc-agy-session` (AGY transcript JSONL analyzer) is scheduled for implementation.
+

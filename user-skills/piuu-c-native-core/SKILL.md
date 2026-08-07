@@ -78,3 +78,15 @@ Java_com_piuu_launcher_repository_LibC_nativeGetCpuUsage(JNIEnv* env, jobject th
     // Parse CPU ticks and return CPU load percentage
 }
 ```
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When executing POSIX C native core modifications, activate these specialized tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-contract-check`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-contract-check) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-contract-check.md)): Audits and verifies JNI `external fun` signatures in Kotlin against exported C functions in `piuu_core.c`.
+- [`wc-build-doctor`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-build-doctor) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-build-doctor.md)): Verifies 16KB max-page-size linker flags in `CMakeLists.txt` and `build.gradle`.
+- [`wc-benchmark`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-benchmark) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-benchmark.md)): Measures execution latency of zero-copy buffer allocations and CPU telemetry parsing.
+- [`wc-crash-doctor`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-crash-doctor) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-crash-doctor.md)): Analyzes native `SIGSEGV` or `dlopen` stacktraces.
+- *Upcoming Tool Note*: `wc-elf-align` (ELF binary 16KB memory page-alignment validator) is currently in the implementation roadmap.
+

@@ -95,3 +95,14 @@ ls -lh arch/arm64/boot/Image*
 file arch/arm64/boot/Image
 ```
 *(Successful output should indicate: `Linux kernel arm64 boot executable Image, ...`)*
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When building kernels or auditing toolchains, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-build-doctor`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-build-doctor) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-build-doctor.md)): Verifies compiler flags and LLVM toolchain configurations.
+- [`wc-benchmark`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-benchmark) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-benchmark.md)): Measures compilation duration, CPU load, and thread efficiency.
+- [`wc-termux-env`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-termux-env) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-termux-env.md)): Audits hardware memory bounds before launching multithreaded builds.
+- *Upcoming Tool Note*: `wc-kernel-builder` (AnyKernel3 compiler and boot.img repackager) is scheduled for implementation.
+

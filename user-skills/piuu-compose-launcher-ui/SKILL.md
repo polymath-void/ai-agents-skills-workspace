@@ -73,3 +73,15 @@ Text(
     textAlign = TextAlign.Center
 )
 ```
+
+---
+
+## 🛠️ Required & Associated Agent Workspace Tools
+When scaffolding or refactoring Jetpack Compose launcher interfaces, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
+
+- [`wc-scaffold`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-scaffold) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-scaffold.md)): Generates boilerplate Jetpack Compose `@Composable` component files and StateFlow repositories.
+- [`wc-code-mod`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-code-mod) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-code-mod.md)): Performs safe multi-file Kotlin batch replacements (e.g. updating grid span logic).
+- [`wc-analyze`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-analyze) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-analyze.md)): Profiles cyclomatic complexity and function metrics of Compose screens.
+- [`wc-json-query`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-json-query) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-json-query.md)): Extracts widget configuration values and dimensions from theme definitions.
+- *Upcoming Tool Note*: `wc-compose-preview` (CLI Compose AST syntax validator) is tracked for subsequent implementation.
+

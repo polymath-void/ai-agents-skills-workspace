@@ -33,3 +33,19 @@
 - **Installation Locations**:
   - `~/.gemini/antigravity-cli/skills/`
   - `~/.gemini/antigravity-cli/builtin/skills/`
+
+---
+
+## 🛠️ Interconnected Tools Library & Tool Gap Roadmap
+- **Tools Library**: [`polymath-void/AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library) (`41 tools in 4 categories`).
+- **Interconnection Matrix & Gap Analysis**: [`TOOL_DEPENDENCIES_AND_GAPS.md`](file:///data/data/com.termux/files/home/skills-workspace/TOOL_DEPENDENCIES_AND_GAPS.md).
+- **Identified Missing Tools for Upcoming Implementation**:
+  1. `wc-cloud-backup` (Zero-loss tarball compressor and automated Google Drive sync engine)
+  2. `wc-skill-pack` (Automated `SKILL.md` YAML frontmatter linter and skill bundler)
+  3. `wc-elf-align` (ELF binary 16KB memory page-alignment validator for Android 15+)
+  4. `wc-adb-bridge` (Termux wireless ADB pair, connect & framebuffer screencap)
+  5. `wc-kernel-builder` (AnyKernel3 compiler and boot.img repackager)
+  6. `wc-hermes-adapter` (Hermes JSON session and multi-agent protocol translator)
+  7. `wc-electron-runner` (Headless Electron IPC mock harness)
+  8. `wc-agy-session` (AGY transcript JSONL analyzer)
+
