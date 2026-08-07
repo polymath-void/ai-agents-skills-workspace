@@ -1,57 +1,57 @@
 ---
 name: workspace-context-helper
-description: Provides workspace context, directory structure metadata, fast code search, multi-ecosystem dependency inspection, Git branch synchronization, Termux system telemetry, and maintenance tools for zero-resource capability discovery.
+description: Autonomous task execution, atomic code refactoring, self-healing build diagnosis, bundle packaging, benchmarking, and zero-resource workspace context tools for AI agents.
 ---
 
-# Workspace Context Helper (`workspace-context-helper`)
+# Workspace Context Helper & Task Automation Suite (`workspace-context-helper`)
 
-A zero-overhead, modular suite of workspace inspection, code navigation, dependency auditing, Git synchronization, Termux runtime telemetry, and cleanup tools designed for autonomous AI agents and developers.
+A comprehensive, zero-overhead ecosystem of **14 purpose-built tools** for complete task execution, atomic code refactoring, self-healing builds, bundle packaging, benchmarking, and instant workspace context discovery.
 
 ---
 
-## 🛠️ Complete Tools Library (`tools/bin/` & `tools/lib/`)
+## ⚡ Task Completion & Automation Suite
 
-### 1. `wc-tool-registry` (Meta & Capability Discovery)
-- **Purpose**: Zero-resource lookup of all available workspace context tools, flags, and recipes.
-- **Usage**: `tools/bin/wc-tool-registry [category|tool_name] [--json]`
-- **Example**: `tools/bin/wc-tool-registry`
+### 1. `wc-task-exec` (Autonomous Multi-Phase Pipeline Runner)
+- **Purpose**: Executes full end-to-end task validation (environment check, dependency inspection, health audits, unit test suite) and outputs a formatted receipt.
+- **Usage**: `tools/bin/wc-task-exec [task_title] [path] [--json]`
+- **Example**: `tools/bin/wc-task-exec "Verify Launcher Build Pipeline" .`
 
-### 2. `wc-scan` (Directory Scanning & Metadata)
-- **Purpose**: Generates a resilient, structured JSON directory tree with aggregate file/dir/size metrics.
-- **Usage**: `tools/bin/wc-scan <directory> [output.json]`
-- **Example**: `tools/bin/wc-scan .`
+### 2. `wc-code-mod` (Atomic Code Modifier & Refactorer)
+- **Purpose**: Batch AST/regex code modifier and import injector across projects with automatic rollback safety backups.
+- **Usage**: `tools/bin/wc-code-mod <replace|import> [args...] [-e ext] [-d]`
+- **Examples**:
+  - `tools/bin/wc-code-mod replace 'oldMethod()' 'newMethod()' . -e kt --dry-run`
+  - `tools/bin/wc-code-mod import 'import com.piuu.launcher.utils.*' . -e kt`
 
-### 3. `wc-search` (Context-Aware Fast Code Finder)
-- **Purpose**: High-speed symbol and text search automatically skipping build, cache, and noise directories.
-- **Usage**: `tools/bin/wc-search <query> [path] [-e ext] [-C lines] [--json]`
-- **Example**: `tools/bin/wc-search 'wallpaperTransparency' . -e kt,xml`
+### 3. `wc-build-doctor` (Self-Healing Build & Config Doctor)
+- **Purpose**: Diagnoses Android/Gradle & script configurations (targetSdk, Compose compiler, 16KB page alignment, shebangs) and applies repairs with `--fix`.
+- **Usage**: `tools/bin/wc-build-doctor [path] [--fix]`
+- **Example**: `tools/bin/wc-build-doctor ~/repo/Piuu-Unified-Launcher-Android --fix`
 
-### 4. `wc-deps` (Multi-Ecosystem Dependency Inspector)
-- **Purpose**: Scans and summarizes dependency manifests across Android (Gradle), Web (NPM), Python, and Rust (Cargo).
-- **Usage**: `tools/bin/wc-deps [directory] [--json]`
-- **Example**: `tools/bin/wc-deps .`
+### 4. `wc-bundle-packer` (Extension & Release Packager)
+- **Purpose**: Compiles `.piuu` extension bundles, validates `manifest.json`, calculates SHA-256 hashes, and verifies bundle integrity.
+- **Usage**: `tools/bin/wc-bundle-packer <pack|verify> [args...]`
+- **Examples**:
+  - `tools/bin/wc-bundle-packer pack ./my-extension dist/my-extension.piuu --name 'Clock Widget'`
+  - `tools/bin/wc-bundle-packer verify dist/my-extension.piuu`
 
-### 5. `wc-git-sync` (Branch Sync & Working Tree Status)
-- **Purpose**: Synchronizes unified branch flows (e.g. `main` <-> `master`) and audits uncommitted working tree changes.
-- **Usage**: `tools/bin/wc-git-sync <status|sync> [dir] [src] [target]`
-- **Example**: `tools/bin/wc-git-sync sync . main master`
+### 5. `wc-benchmark` (Performance & Latency Benchmark Auditor)
+- **Purpose**: Measures execution duration, peak RAM, and latency thresholds with pass/fail scorecards.
+- **Usage**: `tools/bin/wc-benchmark <command...> [-n runs] [-t max_seconds]`
+- **Example**: `tools/bin/wc-benchmark ./bin/wc-scan . -n 3 -t 0.5`
 
-### 6. `wc-termux-env` (Android & Termux Telemetry & Shebangs)
-- **Purpose**: Checks `/proc/meminfo` RAM, CPU load, installed compilers (Clang, Python, Java, Git), and auto-fixes shebangs.
-- **Usage**: `tools/bin/wc-termux-env <status|toolchains|fix-shebangs> [dir]`
-- **Example**: `tools/bin/wc-termux-env status`
+---
 
-### 7. `wc-analyze` (Complexity & Code Quality Framework)
-- **Purpose**: Calculates cyclomatic complexity, lines of code (LOC), functions, and classes.
-- **Usage**: `tools/bin/wc-analyze <complexity|metrics|summary> [directory]`
-- **Example**: `tools/bin/wc-analyze summary .`
+## 🔍 Workspace Context & Discovery Suite
 
-### 8. `wc-manage` (Workspace Sanitization & Maintenance)
-- **Purpose**: Safely removes build artifacts, temporary logs, or orphan caches with `--dry-run` safety guards.
-- **Usage**: `tools/bin/wc-manage sanitize <directory> <pattern1> [pattern2...] [--dry-run]`
-- **Example**: `tools/bin/wc-manage sanitize . '*.tmp' '*.bak' --dry-run`
-
-### 9. `wc-monitor` (Workspace Health & Anomaly Auditor)
-- **Purpose**: Audits workspace health against complexity limits, large file bounds, and forbidden patterns.
-- **Usage**: `tools/bin/wc-monitor <root_path> [config_path]`
-- **Example**: `tools/bin/wc-monitor .`
+| Tool | Category | Purpose | Quick Command |
+| :--- | :--- | :--- | :--- |
+| **`wc-tool-registry`** | Discovery | Instant lookup of all 14 tools and usage recipes. | `wc-tool-registry` |
+| **`wc-search`** | Search | Fast symbol/regex finder skipping build/cache noise. | `wc-search 'query' . -e kt` |
+| **`wc-deps`** | Manifests | Unified manifest inspector (Gradle, NPM, Python, Rust). | `wc-deps .` |
+| **`wc-git-sync`** | Git | Multi-branch synchronizer (`main` ↔ `master`). | `wc-git-sync sync . main master` |
+| **`wc-termux-env`** | Telemetry | Memory/CPU stats, verified toolchains, shebang repairs. | `wc-termux-env status` |
+| **`wc-scan`** | Architecture| Recursive directory tree mapper with byte statistics. | `wc-scan .` |
+| **`wc-analyze`** | Metrics | Cyclomatic complexity and lines-of-code breakdown. | `wc-analyze summary .` |
+| **`wc-manage`** | Sanitization| Safe artifact & log cleanup with dry-run protection. | `wc-manage sanitize . '*.tmp' -d` |
+| **`wc-monitor`** | Health | Continuous health anomaly & oversized file detector. | `wc-monitor .` |

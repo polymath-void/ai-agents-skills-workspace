@@ -12,6 +12,11 @@ from lib.dep_inspector import inspect_dependencies
 from lib.git_helper import get_git_status
 from lib.env_checker import get_system_telemetry, get_installed_toolchains
 from lib.registry import get_registry_catalog
+from lib.code_modder import batch_code_replace, inject_import
+from lib.build_doctor import diagnose_android_build
+from lib.bundle_packer import pack_piuu_bundle, verify_piuu_bundle
+from lib.benchmark import run_benchmark
+from lib.task_executor import execute_autonomous_task
 from wie.storage.memory import WIEMemory
 
 class TestWorkspaceTools(unittest.TestCase):
@@ -64,11 +69,40 @@ class TestWorkspaceTools(unittest.TestCase):
         self.assertEqual(len(matches), 1)
         self.assertEqual(matches[0]["line_number"], 3)
 
+    def test_code_modder(self):
+        res = batch_code_replace(self.sandbox, "return 1", "return 42", extensions=["py"])
+        self.assertEqual(res["total_occurrences"], 1)
+        self.assertIn("return 42", (self.sandbox / "test_file.py").read_text())
+
     def test_dep_inspector(self):
         deps = inspect_dependencies(self.sandbox)
         self.assertEqual(len(deps["npm"]), 1)
         self.assertEqual(deps["npm"][0]["name"], "test-pkg")
         self.assertIn("express", deps["npm"][0]["dependencies"])
+
+    def test_bundle_packer(self):
+        ext_dir = self.sandbox / "my_ext"
+        ext_dir.mkdir(exist_ok=True)
+        (ext_dir / "index.js").write_text("console.log('ext');")
+        bundle_out = self.sandbox / "dist" / "my_ext.piuu"
+        
+        res = pack_piuu_bundle(ext_dir, bundle_out, name="Test Extension")
+        self.assertTrue(bundle_out.exists())
+        self.assertIsNotNone(res["sha256"])
+
+        verify = verify_piuu_bundle(bundle_out)
+        self.assertTrue(verify["valid"])
+        self.assertEqual(verify["manifest"]["name"], "Test Extension")
+
+    def test_benchmark(self):
+        res = run_benchmark(["python3", "-c", "print(123)"], iterations=2, max_allowed_seconds=2.0)
+        self.assertTrue(res["success"])
+        self.assertTrue(res["meets_threshold"])
+
+    def test_task_executor(self):
+        receipt = execute_autonomous_task("Unit Test Pipeline", target_dir=self.sandbox, run_tests=False)
+        self.assertTrue(receipt["success"])
+        self.assertIn("environment", receipt["phases"])
 
     def test_env_checker(self):
         telem = get_system_telemetry()
@@ -79,7 +113,7 @@ class TestWorkspaceTools(unittest.TestCase):
 
     def test_registry(self):
         catalog = get_registry_catalog()
-        self.assertGreaterEqual(len(catalog), 9)
+        self.assertGreaterEqual(len(catalog), 14)
 
     def test_monitor(self):
         monitor = WorkspaceMonitor()
