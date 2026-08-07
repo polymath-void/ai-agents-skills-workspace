@@ -1,67 +1,47 @@
 ---
 name: termux-environment
-description: Priority guidelines, path resolution, package management, non-interactive Git authentication setup, and full-environment cloud backup rules for Android Termux environments.
+description: Operating system rules, path mapping, capabilities, package management, and Termux API integration for Android Termux environment. Use when running terminal commands, managing packages, or configuring workflows in Android Termux environments.
 ---
 
-# 🤖 Termux Environment & Git Authentication Skill
+# 🤖 Termux Environment (`termux-environment`)
 
-This skill provides comprehensive instructions for operating within an Android Termux environment, managing paths, handling package installations, executing non-interactive Git credentials setup, and running full-environment cloud backups.
-
----
-
-## 💾 1. Mandatory Full Environment Backup Rule
-
-**Rule Directive**: Whenever the user asks to run a backup ("run backup", "backup", "create backup"), ALWAYS perform a **whole-environment backup** covering all user data in `$HOME`.
-
-### Backup Execution Command:
-```bash
-python3 $HOME/Termux-Cloud-Backup-Google-Drive/bin/agy-backup backup
-```
-* **Scope**: Backs up `~/.gemini`, `~/.config`, all project repositories, agent skills, custom scripts, and system package lists (`~/.termux/`).
+Operating system rules, path mapping, package management, and Termux API integration for Android Termux environments.
 
 ---
 
-## 🔑 2. Non-Interactive Git Credential Management
-
-When performing `git push` or `git fetch` operations in Termux non-interactive shells:
-
-1. **Disable Terminal Prompts**:
-   ```bash
-   export GIT_TERMINAL_PROMPT=0
-   ```
-2. **Configure GitHub CLI Credential Helper**:
-   ```bash
-   git config --global credential.helper "!gh auth git-credential"
-   ```
-3. **Run GitHub CLI Git Setup**:
-   ```bash
-   gh auth setup-git
-   ```
+## 🎯 When to Use
+Use this skill when:
+- Executing bash commands, scripts, or package installations within Android Termux
+- Configuring storage permissions (`termux-setup-storage`) or Termux API commands
+- Troubleshooting environment paths, proot/chroot containers, or CLI dependencies in Termux
+- Managing non-interactive Git credentials, whole-environment backups, and shebang repairs
 
 ---
 
-## 📂 3. Termux Path Resolution & Guidelines
+## 📋 Workflow Steps
 
-- **Package Manager & Binaries**: `$PREFIX/bin/` (`/data/data/com.termux/files/usr/bin/`)
-- **User Home Directory**: `$HOME` (`/data/data/com.termux/files/home/`)
-- **Shell Interpreters**: Use `#!/bin/sh` or `$PREFIX/bin/bash`. (Avoid `/usr/bin/env bash` on Termux unless `termux-fix-shebang` has been run).
-- **Shebang Repair Tool**: Run `termux-fix-shebang <script_path>` when executing scripts created on Linux/macOS.
+### Step 1: Environment & Storage Verification
+- Check Termux environment variables (`$HOME`, `$PREFIX`, `/data/data/com.termux/files/usr`).
+- Verify storage access permissions (`termux-setup-storage` mapped to `~/storage`).
+- Verify shebang compliance with `termux-fix-shebang` for portable scripts.
+
+### Step 2: Package & Dependency Management
+- Use `pkg update` and `pkg install <package>` for package management.
+- For Python, Node.js, or C/C++ builds, verify build toolchains (`clang`, `make`, `python`).
+- Maintain zero-resource standard (pure Python stdlib + POSIX utilities without heavy pip packages).
+
+### Step 3: API & Automation Execution
+- Utilize Termux API commands (`termux-notification`, `termux-clipboard-get`, `termux-battery-status`) when requested.
+- Manage background tasks, cron jobs, and persistent terminal sessions cleanly.
+- Execute full-environment backups via `agy-backup` or `wc-cloud-backup`.
 
 ---
 
-## 🌿 4. Project Branching & Operating Rules
-
-- **`piuu`** (`main` Branch): Production-stable baseline launcher.
-- **`zen-piuu`** (`master` Branch): Extension architecture & core planned master branch.
-- **No Auto-Push Rule**: Keep code edits local until explicit push instruction from user. Workflow builds are manual-dispatch (`workflow_dispatch`) only.
-
----
-
-## 🛠️ Required & Associated Agent Workspace Tools
+## 🛠️ Required & Associated Workspace Tools
 When executing commands, managing Git, or repairing Termux scripts, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
 
 - [`wc-termux-env`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-termux-env) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-termux-env.md)): Audits Termux hardware telemetry, RAM, and automatically fixes shebang paths across scripts.
 - [`wc-error-healer`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-error-healer) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-error-healer.md)): Automatically diagnoses and fixes Git 403 authorization errors and non-interactive token issues.
-- [`wc-git-sync`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-git-sync) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-git-sync.md)): Synchronizes multi-branch repositories into a unified path (`main` and `master`).
+- [`wc-git-sync`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-git-sync) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-git-sync.md)): Synchronizes multi-branch repositories into a unified path (`main`).
 - [`wc-agent-probe`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-agent-probe) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-agent-probe.md)): Audits toolchains (clang, python, gh) and environment limits.
-
+- [`wc-cloud-backup`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-cloud-backup) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-cloud-backup.md)): Creates whole-environment disaster recovery backups.
