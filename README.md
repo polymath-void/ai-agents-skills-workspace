@@ -9,6 +9,7 @@ SEO Keywords: AI Agent Skills, Autonomous Agent Specification, Agent Skill Disco
 [![Platform](https://img.shields.io/badge/Platform-Android%20Termux%20%7C%20Linux-brightgreen?logo=android)](https://termux.dev)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
 [![Skills Count](https://img.shields.io/badge/Verified%20Skills-14%20Skills-blueviolet?logo=openai)](MEMORY.md)
+[![Profile Views](https://komarev.com/ghpvc/?username=polymath-void&color=blueviolet&style=flat-square&label=PROFILE+VIEWS)](https://github.com/polymath-void)
 [![Zero Auth](https://img.shields.io/badge/Zero--Auth-Direct%20Local%20Execution-success)](README.md)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Cite](https://img.shields.io/badge/Cite-BibTeX-purple)](#-citation--agent-reference-standards)
