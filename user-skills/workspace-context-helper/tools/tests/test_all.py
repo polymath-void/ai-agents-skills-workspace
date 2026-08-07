@@ -7,6 +7,11 @@ from lib.scanner import scan_directory
 from lib.manager import sanitize_workspace
 from lib.analyzer import ComplexityAnalyzer, analyze_workspace, workspace_summary
 from lib.monitor import WorkspaceMonitor
+from lib.fast_finder import fast_search
+from lib.dep_inspector import inspect_dependencies
+from lib.git_helper import get_git_status
+from lib.env_checker import get_system_telemetry, get_installed_toolchains
+from lib.registry import get_registry_catalog
 from wie.storage.memory import WIEMemory
 
 class TestWorkspaceTools(unittest.TestCase):
@@ -18,6 +23,7 @@ class TestWorkspaceTools(unittest.TestCase):
         (self.sandbox / 'test_file.py').write_text('def test():\n    if True:\n        return 1\n')
         (self.sandbox / 'build').mkdir(exist_ok=True)
         (self.sandbox / 'build' / 'temp.o').write_text('dummy')
+        (self.sandbox / 'package.json').write_text('{"name": "test-pkg", "version": "1.0.0", "dependencies": {"express": "^4.18.0"}}')
 
     def tearDown(self):
         if self.sandbox.exists():
@@ -27,7 +33,7 @@ class TestWorkspaceTools(unittest.TestCase):
         tree = scan_directory(self.sandbox)
         self.assertIsNotNone(tree)
         self.assertEqual(tree['name'], 'workspace_test_sandbox')
-        self.assertGreaterEqual(tree['total_files'], 2)
+        self.assertGreaterEqual(tree['total_files'], 3)
         self.assertGreaterEqual(tree['total_dirs'], 1)
 
     def test_manager_dry_run(self):
@@ -52,6 +58,28 @@ class TestWorkspaceTools(unittest.TestCase):
         summary = workspace_summary(self.sandbox)
         self.assertEqual(summary['total_files'], 1)
         self.assertEqual(summary['total_functions'], 1)
+
+    def test_fast_finder(self):
+        matches = fast_search(self.sandbox, "return 1", extensions=["py"])
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0]["line_number"], 3)
+
+    def test_dep_inspector(self):
+        deps = inspect_dependencies(self.sandbox)
+        self.assertEqual(len(deps["npm"]), 1)
+        self.assertEqual(deps["npm"][0]["name"], "test-pkg")
+        self.assertIn("express", deps["npm"][0]["dependencies"])
+
+    def test_env_checker(self):
+        telem = get_system_telemetry()
+        self.assertIn("python_version", telem)
+        self.assertGreater(telem["total_ram_mb"], 0)
+        tools = get_installed_toolchains()
+        self.assertIn("python3", tools)
+
+    def test_registry(self):
+        catalog = get_registry_catalog()
+        self.assertGreaterEqual(len(catalog), 9)
 
     def test_monitor(self):
         monitor = WorkspaceMonitor()
