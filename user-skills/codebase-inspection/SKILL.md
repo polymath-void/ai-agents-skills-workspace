@@ -14,40 +14,39 @@ Use this skill when the user asks to:
 - Inspect or audit a codebase or repository structure
 - Identify key entry points, dependencies, and architectural components
 - Review build configurations, scripts, or GitHub Actions CI workflows
-- Analyze repo complexity, test coverage, and code hygiene
+- Analyze codebase health, error traces, or structural patterns
 - Perform zero-loss dependency mapping and architectural telemetry
 
 ---
 
-## 📋 Inspection Workflow Protocol
+## 📋 Workflow Steps
 
-```mermaid
-graph TD
-    Trigger["Inspection Request"] --> Discover["1. Repository Discovery & Tree Scan"]
-    Discover --> Deps["2. Dependency & Build Configuration Audit"]
-    Deps --> Arch["3. Architectural Component & Entry Point Mapping"]
-    Arch --> CI["4. GitHub Actions / CI Workflow Status Inspection"]
-    CI --> Report["5. Generate Structured Architectural Report"]
-```
+### Step 1: Structural & Directory Survey
+- Examine the root directory for core configuration files (`package.json`, `pyproject.toml`, `Cargo.toml`, `requirements.txt`, `Dockerfile`, `.github/workflows/`, `settings.gradle.kts`, `CMakeLists.txt`, etc.).
+- Identify project type, primary programming languages, build tools, and key dependencies.
+- Map top-level directory layout (e.g., `src/`, `lib/`, `tests/`, `docs/`, `scripts/`, `bin/`).
 
-### 1. Structural Discovery & Manifest Mapping
-Scan the directory layout to identify project type, primary languages, and core manifests:
-- Android: `settings.gradle.kts`, `build.gradle.kts`, `AndroidManifest.xml`
-- Python: `pyproject.toml`, `setup.py`, `requirements.txt`
-- Node / Electron: `package.json`, `tsconfig.json`
-- C / Native: `CMakeLists.txt`, `Android.mk`, `Makefile`
+### Step 2: Architecture & Entry Point Analysis
+- Locate main application entry points (`index.ts`, `main.py`, `app.py`, `server.js`, `MainActivity.kt`, `libpiuu_core.c`).
+- Trace core control flow, API routing layer, data models, and database/storage schemas.
+- Review configuration management, environment variables, and authentication boundaries.
 
-### 2. Dependency & Contract Verification
-- Inspect module dependencies, circular references, and JNI/API contracts.
-- Check third-party package counts and licensing compliance.
+### Step 3: CI/CD & Build Inspection
+- Inspect GitHub Actions workflows or build scripts under `.github/workflows/`.
+- Review build commands, test runners, linter rules, and deployment pipelines.
+- Verify status notification patterns, build triggers, and release automation.
 
-### 3. CI/CD & Build Health Audit
-- Audit `.github/workflows/` for trigger conditions, secrets usage, matrix setups, and build targets.
-- Verify branch rules, merge requirements, and automated release tags.
+### Step 4: Synthesis & Reporting
+Generate a clear, structured summary containing:
+1. **Overview & Tech Stack**: Core frameworks, runtime versions, and primary dependencies.
+2. **Directory Architecture**: Concise map of major components.
+3. **Entry Points & Data Flow**: Key operational paths and control lifecycles.
+4. **Build & CI Status**: Summary of CI workflows, build configurations, and test suites.
+5. **Observations & Key Findings**: Potential gaps, risks, or recommended improvements.
 
 ---
 
-## 🛠️ Associated Workspace Tools
+## 🛠️ Required & Associated Workspace Tools
 When performing codebase inspections, activate these tools from [`AI-Agents-Workspace-Tools-Library`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library):
 
 - [`wc-scan`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/bin/wc-scan) ([`docs`](file:///data/data/com.termux/files/home/AI-Agents-Workspace-Tools-Library/docs/tools/wc-scan.md)): Generates structured JSON directory trees and metadata maps.
